@@ -37,25 +37,24 @@ class CollectionController {
       const {
         name,
         description,
-        releaseYear,
+        releaseYear
       } = req.body;
 
       // Verifica se todos os campos da coleção foram fornecidos
       if (
         !name ||
-        !description ||
-        !releaseYear 
+        !releaseYear
       ) {
         return res
           .status(400)
-          .json({ error: "Todos os campos são obrigatórios" });
+          .json({ error: "Os campos nome e ano de lançamento são obrigatórios" });
       }
 
       // Criar nova coleção
       const newCollection = await collectionModel.create(
         name,
         description,
-        releaseYear,
+        releaseYear
       );
 
       if (!newCollection) {
@@ -81,6 +80,7 @@ class CollectionController {
 
       // Atualizar a coleção
       const updatedCollection = await collectionModel.update(
+        id,
         name,
         description,
         releaseYear,

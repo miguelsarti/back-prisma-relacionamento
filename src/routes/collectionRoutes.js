@@ -8,15 +8,15 @@ const collectionRouter = express.Router();
 collectionRouter.get("/", CollectionController.getAllCollections);
 
 // GET /colecoes/:id - Obter uma coleção pelo ID
-//collectionRouter.get("/:id", CollectionController.getCollectionById);
+collectionRouter.get("/:id", CollectionController.getCollectionById);
 
 // POST /colecoes- Criar uma nova coleção
-//collectionRouter.post("/", CollectionController.createCollection);
+collectionRouter.post("/", CollectionController.createCollection);
 
 // PUT /colecoes/:id - Atualizar uma coleção
-//collectionRouter.put("/:id", CollectionController.updateCollection);
+collectionRouter.put("/:id", CollectionController.updateCollection);
 
 // DELETE /colecoes/:id - Remover uma coleção
-//collectionRouter.delete("/:id", CollectionController.deleteCollection);
+collectionRouter.delete("/:id", CollectionController.deleteCollection);
 
 export default collectionRouter;    
